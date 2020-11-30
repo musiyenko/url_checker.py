@@ -24,7 +24,7 @@ try:
             r = requests.get(url)
 
             if r.status_code == requests.codes.not_found:
-                cprint(urllib.parse.unquote(r.url), 'green')
+                cprint(f'[{r.status_code}] - {urllib.parse.unquote(r.url)}', 'green')
                 result.write(urllib.parse.unquote(r.url) + '\n')
 
 except IOError:
